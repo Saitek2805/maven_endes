@@ -19,7 +19,9 @@ public class Employee {
 	public void setAnios(Integer anios) {
 		this.anios = anios;
 	}
-	
+	public String toString() {
+		return "Employee: "+this.nombre+ " Years in the company: "+this.anios;
+	}
 	
 	
 }

@@ -1,30 +1,23 @@
 package Empleado;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.github.javafaker.Faker;
+
 public class EmployeeManager {
-String[] employeeNames = new String[10];
-int[] employeeYears = new int[10];
-int numberOfEmployees = 0;
+	List<Employee> empleados = new ArrayList<Employee>();
+	
+
 public void addEmployee(String name, int years) {
-if (numberOfEmployees < 10) {
-employeeNames[numberOfEmployees] = name;
-employeeYears[numberOfEmployees] = years;
-numberOfEmployees++;
-System.out.println(name + " added to the system.");
-} else {
-System.out.println("Cannot add more employees, system is full.");
-}
+	Employee e1=new Employee(name,years);
+	empleados.add(e1);
 }
 public void printEmployees() {
-System.out.println("List of employees:");
-for (int i = 0; i < numberOfEmployees; i++) {
-System.out.println(employeeNames[i] + ", Years in company: " +
-employeeYears[i]);
+System.out.println("List of employees: ");
+ for (Employee e :empleados) {
+	 System.out.println(e);
+ }
 }
-}
-public static void main(String[] args) {
-EmployeeManager manager = new EmployeeManager();
-manager.addEmployee("John Doe", 5);
-manager.addEmployee("Jane Smith", 2);
-manager.printEmployees();
-}
+
 }
